@@ -15,7 +15,6 @@ func errorRecovery(h http.Handler) http.Handler {
 				http.Error(w, "Internal Server Error", http.StatusInternalServerError)
 				log.Println(err)
 				debug.PrintStack()
-				// go service.SendSlackMessage(slackURL, fmt.Sprintf("biri: error; %v", err))
 			}
 		}()
 		h.ServeHTTP(w, r)

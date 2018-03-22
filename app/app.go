@@ -52,7 +52,9 @@ func New(c *Config) hime.HandlerFactory {
 			}).
 			TemplateDir("template").
 			TemplateRoot("root").
-			// Component()
+			Component(
+				"main.tmpl",
+			).
 			Template("app/index", "_layout/app.tmpl", "app/index.tmpl").
 			BeforeRender(func(h http.Handler) http.Handler {
 				return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
@@ -99,7 +101,7 @@ func New(c *Config) hime.HandlerFactory {
 			noCORS,
 			securityHeaders,
 			methodFilter,
-			csrf.New(csrf.Config{Origins: []string{"http://localhost:8000"}}),
+			csrf.New(csrf.Config{Origins: []string{"http://localhost:8080"}}),
 		)(mux)
 
 	}
