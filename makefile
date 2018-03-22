@@ -8,3 +8,6 @@ dev:
 
 style:
 	npm run dev
+
+cstyle:
+	node-sass --output-style compressed --include-path node_modules src/scss/main.scss > assets/style.css
