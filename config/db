@@ -1,1 +1,0 @@
-postgres://username:password@host/database_name?sslmode=require

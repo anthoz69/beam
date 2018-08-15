@@ -1,7 +1,10 @@
 package app
 
-func page() map[string]interface{} {
-	p := make(map[string]interface{})
+import (
+	"github.com/acoshift/hime"
+)
 
-	return p
+func page(ctx *hime.Context) map[string]interface{} {
+	x := make(map[string]interface{})
+	return x
 }
